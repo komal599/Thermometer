@@ -1,0 +1,40 @@
+ 
+<div class="row">
+    <div class="col-md padding">
+        <form #f ="ngForm">
+            <label>Boiling Point</label>
+        <input type="input"
+        class="form-control"
+        placeholder="Enter Boiling point"
+        name="bp"
+        [(ngModel)]="bp">
+       
+
+        <label>Freezing Point</label>
+        <input type="input"
+        class="form-control"
+        placeholder="Enter Freezing point"
+        name="fp"
+        [(ngModel)]="fP">
+      
+
+        <label>Temperature</label>
+        <input type="input"
+        class="form-control"
+        placeholder="Enter temperature"
+        name="temperature"
+        [(ngModel)]="temperature"
+        required>
+
+        <select (change)="selectThreshold($event)">
+            <option>Select</option>
+                <option value="boilingPoint">Boiling Point</option>
+                <option value="freezingPoint">FreezingPoint</option>
+        </select>
+        <p>Threshold selected: {{selectedThreshold}}</p>
+       
+        <button type="button" class="btn btn-success margin" (click)="showTemp()">Convert</button>
+    </form>
+    </div>
+
+</div>
